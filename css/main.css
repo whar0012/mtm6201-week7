@@ -1,0 +1,43 @@
+/*. Space is Name Selector */
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Space is Descendant Combinator */
+
+nav ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li{
+    flex: 1;
+}
+
+/* loVe HAte */
+nav li a,
+nav li a:link,
+nav li a:visited{
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: transform .5s;
+    color: black;
+}
+
+nav li a:hover,
+nav li a:focus{
+    text-decoration: underline;
+    transform: scale(1.25);
+}
+
+nav li a:active{
+    transform: scale(1.25) translateX(15px);
+    color: gray;
+}
+
+/* :link, :visited, :hover, :focus, :active Are Pseudo Classes */
