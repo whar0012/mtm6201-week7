@@ -1,12 +1,20 @@
-/*. Space is Name Selector */
+:root{
+    --primary-color: plum;
+    --secondary-color: purple;
+    --light-color: white;
+    --dark-color: black;
+    --special-color: tomato;
+    --medium-font: 1.15rem;
+    --large-font: 1.25rem;
+}
 
+/*. is Class Name Selector */
 .container {
     max-width: 900px;
     margin: 0 auto;
 }
 
 /* Space is Descendant Combinator */
-
 nav ul{
     list-style-type: none;
     padding: 0;
@@ -26,7 +34,7 @@ nav li a:visited{
     text-decoration: none;
     text-transform: uppercase;
     transition: transform .5s;
-    color: black;
+    color: var(--dark-color);
 }
 
 nav li a:hover,
@@ -37,7 +45,52 @@ nav li a:focus{
 
 nav li a:active{
     transform: scale(1.25) translateX(15px);
-    color: gray;
 }
 
 /* :link, :visited, :hover, :focus, :active Are Pseudo Classes */
+
+/* [] is for Attribute Selector */
+a[href="#"]{
+    border: 1px solid var(--primary-color);
+}
+
+/*  ^= is for Start With */
+a[href^="http"]{
+    border-left: 8px solid var(--secondary-color);
+}
+
+/* > is Child Combinator */
+main > p{
+    font-size: 1.25rem;
+}
+
+/* + is Adjecent Selector */
+h2 + p{
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding: 1rem;
+}
+
+.stars span:hover~span{
+    opacity: .4;
+}
+
+/* $= is for Value Ends With */
+a[href$=".pdf"]{
+    color: var(--special-color);
+}
+
+/* ::after is Pseudo Element */
+a[href$=".pdf"]::after{
+    content: "\2193";
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+h3+p::first-letter{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: .25rem;
+    margin-right: .10rem;
+}
+
